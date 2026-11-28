@@ -1,46 +1,79 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Контакты CreatorHub — вопросы, предложения и обратная связь.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Контакты CreatorHub, форма обратной связи и ответы на вопросы о поиске креаторов.">
   <title>Контакты — CreatorHub</title>
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contacts.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
-<body data-page="contacts">
-  <div class="scroll-progress" id="scrollProgress"></div><div id="site-header"></div>
-  <main>
-    <section class="page-hero"><div class="container"><nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="index.html">Главная</a><span>/</span><span>Контакты</span></nav><div class="page-hero-content"><div><span class="section-kicker">МЫ НА СВЯЗИ</span><h1>Давайте <span class="gradient-text">общаться</span></h1><p>Есть вопрос, идея или предложение? Напишите нам — будем рады помочь.</p></div><div class="contact-hero-mark">✳</div></div></div></section>
-    <section class="section"><div class="container"><div class="contact-layout">
-      <div class="contact-info-column reveal"><span class="section-kicker">КОНТАКТНАЯ ИНФОРМАЦИЯ</span><h2>Мы всегда<br>на <span class="gradient-text">связи</span></h2><p class="muted-copy">Команда CreatorHub поможет разобраться с платформой и ответит на вопросы о сотрудничестве.</p>
-        <a class="contact-detail" href="mailto:hello@creatorhub.ru"><span class="contact-detail-icon">✉</span><span><small>Электронная почта</small><strong>hello@creatorhub.ru</strong></span><span class="contact-detail-arrow">↗</span></a>
-        <a class="contact-detail" href="https://t.me/" target="_blank" rel="noopener"><span class="contact-detail-icon">➤</span><span><small>Telegram</small><strong>@creatorhub_support</strong></span><span class="contact-detail-arrow">↗</span></a>
-        <div class="contact-detail"><span class="contact-detail-icon">◷</span><span><small>Время ответа</small><strong>Пн–Пт, 10:00–18:00</strong></span></div>
-        <div class="social-links"><a href="https://vk.com/" target="_blank" rel="noopener" aria-label="ВКонтакте">вк</a><a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">◎</a><a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram">➤</a></div>
-      </div>
-      <div class="contact-form-card reveal reveal-delay-1"><div class="form-card-heading"><div><span class="section-kicker">ОБРАТНАЯ СВЯЗЬ</span><h2>Напишите нам</h2></div><span class="form-heading-icon">↗</span></div><p>Заполните форму, и мы свяжемся с вами.</p>
-        <form id="contactForm" class="needs-validation" novalidate>
-          <div class="row g-3"><div class="col-md-6"><label class="form-label" for="contactName">Ваше имя *</label><input class="form-control" id="contactName" name="name" type="text" placeholder="Как к вам обращаться?" required minlength="2"><div class="invalid-feedback">Введите имя (не менее 2 символов).</div></div>
-          <div class="col-md-6"><label class="form-label" for="contactEmail">Электронная почта *</label><input class="form-control" id="contactEmail" name="email" type="email" placeholder="name@example.com" required><div class="invalid-feedback">Введите корректный адрес почты.</div></div>
-          <div class="col-12"><label class="form-label" for="contactSubject">Тема обращения</label><select class="form-select" id="contactSubject" name="subject"><option value="Вопрос о платформе">Вопрос о платформе</option><option value="Рекламное сотрудничество">Рекламное сотрудничество</option><option value="Стать креатором">Хочу стать креатором</option><option value="Другое">Другое</option></select></div>
-          <div class="col-12"><label class="form-label" for="contactMessage">Сообщение *</label><textarea class="form-control" id="contactMessage" name="message" rows="4" placeholder="Расскажите, чем можем помочь..." required minlength="10"></textarea><div class="invalid-feedback">Напишите сообщение (не менее 10 символов).</div></div>
-          <div class="col-12"><div class="form-check"><input class="form-check-input" id="contactAgree" type="checkbox" required><label class="form-check-label" for="contactAgree">Согласен(на) на обработку данных для ответа на обращение</label><div class="invalid-feedback">Необходимо подтвердить согласие.</div></div></div>
-          <div class="col-12"><button class="btn btn-brand btn-lg w-100" type="submit">Отправить сообщение <span>↗</span></button><div class="form-status" id="contactStatus" aria-live="polite"></div></div></div>
+<body>
+  <header class="site-head"></header>
+  <main id="main" class="connect">
+    <nav class="connect__crumbs" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a><span aria-hidden="true">/</span><span aria-current="page">Контакты</span>
+    </nav>
+    <h1 class="connect__title">Контакты</h1>
+    <div class="connect__layout">
+      <section class="connect__address" aria-labelledby="address-title">
+        <h2 id="address-title">На связи<br>CreatorHub<span aria-hidden="true">.</span></h2>
+        <p>Помогаем брендам находить авторов для рекламных проектов. Здесь можно задать вопрос о каталоге или предложить улучшение.</p>
+        <div class="connect__channel">
+          <span class="connect__label">Почта проекта · демо</span>
+          <a href="mailto:hello@creatorhub.example">hello@creatorhub.example</a>
+        </div>
+        <div class="connect__channel">
+          <span class="connect__label">Социальные сети</span>
+          <div class="connect__socials">
+            <a href="https://telegram.org/" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
+          </div>
+          <small>В учебной версии ссылки ведут на главные страницы площадок.</small>
+        </div>
+      </section>
+      <section class="connect__form-panel" aria-labelledby="write-title">
+        <h2 id="write-title">Написать нам</h2>
+        <p class="connect__hint">Все поля обязательны. Сообщение сохранится в этом браузере.</p>
+        <form class="connect__form" data-inquiry="feedback">
+          <div class="connect__row">
+            <label for="feedback-name">Имя
+              <input id="feedback-name" name="name" autocomplete="name" required maxlength="100" placeholder="Анна">
+            </label>
+            <label for="feedback-email">Электронная почта
+              <input id="feedback-email" type="email" name="email" autocomplete="email" required maxlength="254" placeholder="anna@example.com">
+            </label>
+          </div>
+          <label for="feedback-topic">Тема обращения
+            <select id="feedback-topic" name="topic" required>
+              <option value="">Выберите тему</option>
+              <option>Поиск креатора</option>
+              <option>Сотрудничество</option>
+              <option>Предложение для платформы</option>
+              <option>Другой вопрос</option>
+            </select>
+          </label>
+          <label for="feedback-message">Сообщение
+            <textarea id="feedback-message" name="message" required maxlength="3000" rows="4" placeholder="Чем мы можем помочь?"></textarea>
+          </label>
+          <button type="submit" class="connect__send">Отправить сообщение</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
         </form>
+      </section>
+    </div>
+    <section class="connect__faq" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">Частые вопросы</h2>
+      <div>
+        <details><summary>Как подобрать автора для кампании?</summary><p>Откройте <a href="creators.html">каталог креаторов</a>, укажите площадку, тематику и размер аудитории. В карточке автора можно посмотреть краткую информацию, а в профиле — узнать подробнее о подписчиках и форматах рекламы.</p></details>
+        <details><summary>Где оставить заявку на сотрудничество?</summary><p>Перейдите в профиль выбранного автора и заполните форму заявки. Укажите формат рекламы, бюджет и контактную почту. В комментарии можно добавить сроки и задачу кампании.</p></details>
+        <details><summary>Получит ли автор моё сообщение?</summary><p>CreatorHub работает в учебном режиме. Заявки на сотрудничество и сообщения обратной связи сохраняются только в браузере на устройстве, где вы заполнили форму.</p></details>
       </div>
-    </div></div></section>
-    <section class="section section-muted"><div class="container"><div class="section-heading text-center reveal"><span class="section-kicker">ОТВЕТЫ НА ПОПУЛЯРНЫЕ ВОПРОСЫ</span><h2>Часто задаваемые <span class="gradient-text">вопросы</span></h2><p>Собрали ответы на то, что спрашивают чаще всего.</p></div>
-      <div class="faq-list reveal" id="faqList">
-        <div class="faq-item"><button class="faq-question" aria-expanded="false">Как найти подходящего креатора? <span>+</span></button><div class="faq-answer"><p>Откройте каталог и воспользуйтесь поиском и фильтрами. Можно выбрать социальную сеть, тематику контента и диапазон подписчиков, а затем перейти в профиль автора.</p></div></div>
-        <div class="faq-item"><button class="faq-question" aria-expanded="false">Как отправить заявку на рекламу? <span>+</span></button><div class="faq-answer"><p>На странице креатора заполните форму сотрудничества: укажите контактные данные, желаемый формат рекламы, бюджет и комментарий. В учебной версии отправка демонстрируется сообщением на странице.</p></div></div>
-        <div class="faq-item"><button class="faq-question" aria-expanded="false">Можно ли авторам добавить свой профиль? <span>+</span></button><div class="faq-answer"><p>В демонстрационной версии каталог заполнен примерами. Возможность самостоятельной регистрации авторов может быть добавлена в следующей версии платформы.</p></div></div>
-        <div class="faq-item"><button class="faq-question" aria-expanded="false">Реальные ли цифры в профилях? <span>+</span></button><div class="faq-answer"><p>Нет. Имена, фотографии и показатели в текущей версии являются демонстрационными данными, подготовленными для показа функций сайта.</p></div></div>
-      </div>
-    </div></section>
+    </section>
   </main>
-  <div id="site-footer"></div><button class="back-to-top" id="backToTop" aria-label="Наверх">↑</button><div class="custom-cursor" id="customCursor" aria-hidden="true"></div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="assets/js/main.js"></script><script src="assets/js/forms.js"></script>
+  <footer class="site-foot"></footer>
+  <script src="js/data.js"></script>
+  <script src="js/shared.js"></script>
 </body>
 </html>
